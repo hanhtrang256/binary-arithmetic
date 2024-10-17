@@ -196,9 +196,6 @@ void divi(char dividend[], char divisor[], char quotient[], char remainder[], in
     copyArr(dynamicDividend, convertDividend, len);
 
     while (true) {  // process loop
-        // cout << "dynamic dividend = "; 
-        // for (int i = len - 1; i >= 0; --i) cout << (int)dynamicDividend[i];
-        // cout << '\n';
         if (compare(dynamicDividend, convertDivisor) == -1) {
             copyArr(remainder, dynamicDividend, len);
             break;
@@ -215,15 +212,7 @@ void divi(char dividend[], char divisor[], char quotient[], char remainder[], in
             --numShiftLeft;
         }
 
-        // cout << "tmp divisor = ";
-        // for (int i = len - 1; i >= 0; --i) cout << (int)tmpDivisor[i];
-        // cout << '\n';
-
         quotient[numShiftLeft] = 1;
-
-        // cout << "quotient = ";
-        // for (int i = len - 1; i >= 0; --i) cout << (int)quotient[i];
-        // cout << '\n';
 
         char tmpRemainder[len + 1];
         sub(dynamicDividend, tmpDivisor, tmpRemainder, len);
@@ -239,6 +228,11 @@ void divi(char dividend[], char divisor[], char quotient[], char remainder[], in
             get2Comple(remainder, tmp, len);
             copyArr(remainder, tmp, len);
         }
+    }
+    else if ((int)dividend[len - 1] & (int)divisor[len - 1] == 1) {
+        char tmp[len + 1];
+        get2Comple(remainder, tmp, len);
+        copyArr(remainder, tmp, len);
     }
 }
 
