@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <string>
 #include <cstring>
+#include "conio.h"
 using namespace std;
 
 /* INPUT, OUTPUT, OTHER FUNCTIONS */
@@ -286,5 +287,6 @@ int main() {
         output(quotient, 8, 1, "Quotient of A / B = ");
         output(remainder, 8, 1, "Remainder of A / B (A % B) = ");
     }
+    _getch();
     return 0;
 }
